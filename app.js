@@ -5,7 +5,7 @@ const axios = require('axios')
 
 const port = process.env.PORT || 6001
 
-const ISSUES_API_ENDPOINT = 'https://api.github.com.com/repos/syed-mohsin/github-issue-assigner/issues'
+const ISSUES_API_ENDPOINT = 'https://api.github.com/repos/syed-mohsin/github-issue-assigner/issues'
 axios.defaults.headers.post['Authorization'] = `token ${process.env.GITHUB_API_ACCESS_TOKEN}`
 
 const USERNAMES = ['syed-mohsin']
