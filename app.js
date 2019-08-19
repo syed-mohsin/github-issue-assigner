@@ -32,6 +32,7 @@ app.post('/', (req, res) => {
 				Authorization: `token ${process.env.GITHUB_API_ACCESS_TOKEN}`,
 			},
 			json: { assignees: USERNAMES },
+			rejectUnauthorized: false,
 			// followAllRedirects: true,
 		}, (err, response, body) => {
 			console.log('error', err, 'status', response && response.statusCode, 'body', body)
