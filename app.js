@@ -5,7 +5,7 @@ const axios = require('axios')
 const redis = require('redis')
 
 const port = process.env.PORT || 6001
-const ISSUES_API_ENDPOINT = 'https://api.github.com/repos/buildzoom/github-issue-assigner/issues'
+const ISSUES_API_ENDPOINT = 'https://api.github.com/repos/buildzoom/help-desk/issues'
 axios.defaults.headers.post['Authorization'] = `token ${process.env.GITHUB_API_ACCESS_TOKEN}`
 
 const redisClient = redis.createClient(process.env.REDIS_URL)
