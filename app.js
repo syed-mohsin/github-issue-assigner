@@ -43,8 +43,9 @@ app.post('/', (req, res) => {
 				assigneeIndex = assigneeIndex >= USERNAMES.length ? 0 : assigneeIndex
 
 				axios.post(`${ISSUES_API_ENDPOINT}/${number}/assignees`, {
-					assignees: [USERNAMES[assigneeIndex]]
-				}).then(() => {
+					assignees: USERNAMES[assigneeIndex]
+				}).then(res => {
+					console.log('res', res)
 					redisClient.multi()
 						.set('assigneeIndex', (assigneeIndex + 1) % USERNAMES.length)
 						.exec((err) => {
